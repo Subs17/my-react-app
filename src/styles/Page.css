@@ -18,35 +18,54 @@
   .container {
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     gap: 24px;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 520px;
+    width: auto;
     height: 96px;
-    position: absolute;
     left: 170px;
     top: 157.5px;
   }
 
   .login-page .form-list {
+    margin-left: 0px;
+    width: auto;
     display: flex;
     align-items: flex-start;
     gap: 4px;
-    justify-content: right;
-    height: 291px;
+    justify-content: left;
     position: relative;
+    flex: 1 1 auto;
   }
 
   .login-page .form-row {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
+    flex-direction: column;
+    gap: 10px;
     align-items: flex-start;
     justify-content: flex-start;
     align-self: stretch;
     position: relative;
+    flex-grow: 1;
+  }
+
+  .textfield-label {
+    font-size: 20px;
+    font-weight: bold;
+    align-self: stretch;
   }
   
+  .textfield {
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 400;
+    height: 20px;
+    overflow: hidden;
+  }
+
   .tab {
     font-size: 16px;
     cursor: pointer;
@@ -67,7 +86,7 @@
     gap: 1rem;
     text-align: center;
     background: #474747;
-    padding: 40px 20px;
+    padding: 30px 20px;
   }
   
   .welcome-section h1 {
@@ -82,12 +101,18 @@
   }
   
   .form {
-    padding: 50px;
+    display:flex;
+    width: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
     align-self: stretch;
+    gap: 100px;
     flex-shrink: 0;
     height: 411px;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
   }
 
   .form-section {
