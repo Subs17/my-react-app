@@ -1,0 +1,120 @@
+
+/* Shared Button Styles */
+.button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button-primary {
+    background: #000;
+    color: #fff;
+    border: none;
+  }
+  
+  .button-secondary {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+  }
+  
+  /* Shared Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-link {
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Shared Footer Styles */
+  footer {
+    text-align: center;
+    padding: 3px;
+  }
+
+  .section-footer{
+    padding: 14px;
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container-footer{
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 1144px;
+    height: 100px;
+    position: relative;
+  }
+
+  .title7 {
+    color: #000000;
+    text-align: center;
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    position: relative;
+    align-self: stretch;
+    width: 307px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title8 {
+    color: #000000;
+    text-align: center;
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    position: relative;
+    align-self: stretch;
+    width: 217px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .title9 {
+    color: #000000;
+    text-align: center;
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    position: relative;
+    align-self: stretch;
+    width: 235px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
