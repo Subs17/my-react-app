@@ -1,77 +1,427 @@
 .page,
 .page * {
-    box-sizing: inherit;
+  font-family: "Roboto-Medium", sans-serif;
+  box-sizing: border-box;
+}
+.page {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
-.page {
-    font-family: "Roboto", sans-serif;
-    color: #000;
-    background: #f8f8f8;
-    }
-  
-  .title1 {
-    font-size: 48px;
-    line-height: 48px;
-    font-weight: 700;
-  }
-
-  .container {
-    display: flex;
+.page .login-page {
+  width: 100%;
+  height: auto;
+}
+.top-bar {
+  background: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 80px;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+.rectangle-4137 {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+.title {
+  color: #000000;
+  text-align: left;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 500;
+  position: relative;
+  flex: 1;
+}
+.navigation {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.tab {
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+}
+.tab2 {
+  color: #000000;
+  text-align: left;
+  font-size: 32px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+}
+.primary {
+  background: #000000;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 200px;
+  position: relative;
+}
+.secondary{
+  background: #cacaca;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 200px;
+  position: relative;
+}
+.title2 {
+  color: #ffffff;
+  text-align: left;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 500;
+  position: relative;
+}
+.login-header {
+  background: #474747ab;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+.header-container {
+  display: flex;
     flex-direction: column;
-    gap: 24px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 520px;
-    height: 96px;
-    position: absolute;
-    left: 170px;
-    top: 157.5px;
-  }
-
-  .login-form-list {
-    display: flex;
-    align-items: flex-start;
-    gap: 4px;
-    justify-content: right;
-    height: 291px;
-    position: relative;
-  }
-
-  .login-form-row {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: stretch;
-    position: relative;
-  }
-  
-  .tab {
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .welcome-section {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
+    width: auto;
     gap: 1rem;
     text-align: center;
-    background: #474747;
-    padding: 40px 20px;
-  }
-  
-  .welcome-section h1 {
-    font-size: 28px;
-    font-weight: bold;
-    color:white;
-  }
-  
-  .welcome-section p {
-    font-size: 16px;
-    color:white;
-  }
-  
+}
+.header-title {
+  color: #ffffff;
+  text-align: center;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: bold;
+  position: relative;
+  width: 900px;
+}
+.description {
+  color: #ffffff;
+  text-align: center;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  width: 900px;
+}
+.vector-200 {
+  flex-shrink: 0;
+  height: 0px;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  overflow: visible;
+}
+.login-form {
+  display: flex;
+  gap: 10px;
+  margin: 5px;
+  height: 400px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 520px;
+  height: 96px;
+  position: absolute;
+  left: 170px;
+  top: 157.5px;
+}
+.login-title {
+  color: #000000;
+  text-align: left;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+.form-description {
+  color: #000000;
+  text-align: left;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  width: 410px;
+  height: 330px;
+  position: absolute;
+  left: 750px;
+  top: 60px;
+  flex-wrap: nowrap;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.button-row{
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 400px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+.title5 {
+  color: #000000;
+  text-align: left;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  position: relative
+}
 
-  
+.email-label {
+
+}
+
+.password-label {
+  top: 25px;
+}
+.textfield {
+  background: #ffffff;
+  border-radius: 6px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-width: 1px;
+  padding: 8px 12px 8px 12px;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.text {
+  color: rgba(0, 0, 0, 0.5);
+  text-align: left;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  position: relative;
+  flex: 1;
+  height: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.input2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 520px;
+  position: relative;
+  overflow: hidden;
+}
+.info {
+  color: rgba(0, 0, 0, 0.5);
+  text-align: left;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  position: relative;
+  align-self: stretch;
+}
+.hyperlink-style {
+  color: #0000ff;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.login-page .tab3 {
+  left: 250px;
+  position: relative;
+}
+.button {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+  transition-duration: 0.4s;
+  position: relative;
+  overflow: hidden;
+  width: 200px;
+  align-items: center;;
+}
+
+.login-button{
+  background-color: #000000;
+  color: #ffffff;
+}
+.login-button:hover{
+  background-color: #a7a7a77c;
+  color: #000000;
+}
+
+.signup-button{
+  background-color: #a7a7a77c;
+  color: #000000;
+}
+.signup-button:hover{
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.button .title {
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  position: relative;
+}
+
+.title7{
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  position: relative;
+}
+.navigation2 {
+  background: #ffffff;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 24px;
+  position: relative;
+}
+.tab4 {
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: 265px;
+  top: 0px;
+}
+.login-page .tab5 {
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: 464px;
+  top: 0px;
+}
+.vector-2002 {
+  height: 0px;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  overflow: visible;
+}
+.section2 {
+  padding: 14px 60px 20px 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.container3 {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1144px;
+  height: 100px;
+  position: relative;
+}
+
