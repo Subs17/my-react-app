@@ -11,13 +11,13 @@
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  width: 100%;
   height: auto;
+  min-height: 100vh;
 }
 
 .page .login-page {
-  width: 100%;
   height: auto;
+  width: 100%;
 }
 .top-bar {
   background: #ffffff;
@@ -161,12 +161,15 @@
 }
 .login-form {
   display: flex;
+  max-width: 1200px;
   gap: 10px;
-  margin: 5px;
+  margin: auto;
   height: 400px;
-  padding: 10px;
+  max-height: 80vh;
   position: relative;
   overflow: hidden;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 .login-container {
   display: flex;
@@ -180,7 +183,7 @@
   left: 170px;
   top: 157.5px;
 }
-.login-title {
+.login-container h1 {
   color: #000000;
   text-align: left;
   font-size: 48px;
@@ -209,7 +212,7 @@
   position: absolute;
   left: 750px;
   top: 60px;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap ;
 }
 .row {
   display: flex;
@@ -319,7 +322,13 @@
 .login-page .tab3 {
   left: 250px;
   position: relative;
+  cursor: pointer;
 }
+
+.login-page .tab3:hover {
+  color: #798fff;
+}
+
 .button {
   display: flex;
   flex-direction: column;
@@ -425,3 +434,85 @@
   position: relative;
 }
 
+/*Registration Page Styles*/
+.primary-button {
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form {
+  display:flex;
+  width: auto;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  align-self: stretch;
+  gap: 100px;
+  flex-shrink: 0;
+  height: 411px;
+  position: relative;
+  overflow: auto;
+}
+
+.form-section {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.form-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.form-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-content p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.secondary-button {
+  padding: 10px 20px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  cursor: pointer;
+}
