@@ -4,6 +4,7 @@ import Loginpage from './Login';
 import Registrationpage from './Registration';
 import Helppage from './Help';
 import Dashboardpage from './Dashboard';
+import './styles/PageStyles.css';
 
 const App = () => {
   return (
