@@ -20,29 +20,53 @@
   }
   
   /* Shared Navbar Styles */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar-title {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navbar-link {
-    font-size: 16px;
-    cursor: pointer;
-  }
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Space between title and links */
+  align-items: center;
+  padding: 20px 40px;
+  gap: 20px; /* Space between title and links */
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-links-container {
+  display: flex; /* Ensure flex layout for alignment */
+  justify-content: flex-end; /* Align links to the right */
+}
+
+.navbar-links {
+  display: flex; /* Align links in a row */
+  list-style: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  gap: 20px; /* Space between links */
+}
+
+.navbar-links li {
+  font-size: 18px;
+  display: flex; /* Flex layout ensures alignment */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  cursor: pointer;
+}
+
+.navbar-links span {
+  display: inline-block; /* Ensures proper sizing for padding */
+  text-decoration: none; /* Remove underline */
+  color: #000; /* Set link color */
+  line-height: 1; /* Reduce unnecessary vertical spacing */
+}
+
+.navbar-links span:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
   
   /* Shared Footer Styles */
   footer {
@@ -51,6 +75,7 @@
   }
 
   .section-footer{
+    background-color: #cbcbcb;
     padding: 14px;
     display: flex;
     flex-direction: row;
