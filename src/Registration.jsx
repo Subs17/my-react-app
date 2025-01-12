@@ -2,7 +2,7 @@ import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import "./styles/Page.css";
+//import "./styles/Page.css";
 
 const Registrationpage = () =>{
     const [formData, setFormData] = useState({
@@ -51,18 +51,12 @@ const Registrationpage = () =>{
     const handleBackToLogin = () =>{
         console.log('Redirecting to login page...');
         //Handle back to login page
-        navigate('/');
+        navigate('/login');
     }
 
     return (
         <div className="page">
-      <Navbar />
-
-      {/* Welcome Section */}
-      <div className="welcome-section">
-        <h1>Welcome to the Elderly Care Portal!</h1>
-        <p>Stay organized, stay on track, and keep everything important in one place!</p>
-      </div>
+        <Navbar />
 
       {/* Form Section */}
       <div className="form-section">
