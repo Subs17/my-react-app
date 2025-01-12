@@ -1,12 +1,11 @@
-import '../styles/shared.css';
-
+// Desc: Footer component for the Elderly Care Portal
 const Footer = () => {
     return (
       <div className="section-footer">
       <footer className="container-footer">
-        <span className='title7'>© 2024 Elderly Care Portal</span>
-        <span className='title8'>Privacy Policy</span>
-        <span className='title9'>Terms of Service</span>
+        <span className='footer-text exclude'>© 2024 Elderly Care Portal</span>
+        <span className='footer-text'>Privacy Policy</span>
+        <span className='footer-text'>Terms of Service</span>
       </footer>
     </div>
     );
