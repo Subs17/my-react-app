@@ -1,11 +1,19 @@
 const Navbar = () => {
     return (
       <div className="navbar">
-      <div className="navbar-title">Elderly Care Portal</div>
-      <div className="navbar-links">
-        <span className="navbar-link">About Us</span>
-        <span className="navbar-link">FAQ</span>
-        <span className="navbar-link">Support</span>
+      <h1>Elderly Care Portal</h1>
+      <div className="navbar-links-container">
+        <ul className="navbar-links">
+          <li>
+          <span>About Us</span>
+          </li>
+          <li>
+            <span>FAQ</span>
+          </li>
+          <li>
+            <span>Support</span>
+          </li>
+        </ul>
       </div>
     </div>
     );
