@@ -3,7 +3,7 @@ import { useState } from 'react';
 import CalendarComponent from './components/Calendar';
 import UpcomingEvent from './components/Event';
 import Footer from "./components/Footer";
-import './styles/Page.css';
+//import './styles/Page.css';
 
 const Dashboardpage = ({ className, ...props }) =>{
     const [events, setEvents] = useState([]);
