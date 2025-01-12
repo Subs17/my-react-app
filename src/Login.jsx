@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import './styles/PageStyles.css'; // Ensure this CSS file includes the provided styles
+//import './styles/PageStyles.css'; // Ensure this CSS file includes the provided styles
 
 const Login = () => {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Login = () => {
 
         <div className="login-form">
          <div className="login-container">
-            <h1 className="login-title">Login</h1>
+            <h1>Login</h1>
             <p className="form-description">
             Enter your credentials to access your account
             </p>
@@ -77,8 +77,8 @@ const Login = () => {
          </div>
             <img className="vector-2002" src="vector-2001.svg" alt="Background" />
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };
