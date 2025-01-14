@@ -1,18 +1,46 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 //import './styles/PageStyles.css'; // Ensure this CSS file includes the provided styles
 
 const Login = () => {
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [errorMessage, setErrorMessage] = useState('');
+
   const navigate = useNavigate();
   const handleSignupClick = () => {
     console.log('Redirecting to registration page...');
     navigate('/register');
   }
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   const handleLoginClick = () => {
-    console.log('Redirecting to dashboard...');
-    //navigate('/dashboard');
+    //Validate Fields
+    if(!formData.email || !formData.password){
+      setErrorMessage('Please fill out all required fields.');
+      console.log('Missing required fields...');
+      return;
+    }
+
+    const validCredentials = {
+      email: 'testexample@.com',
+      password: 'password123'
+    };
+
+    if(formData.email === validCredentials.email 
+      && formData.password === validCredentials.password){
+        console.log('Login successful! Redirecting to dashboard...');
+        setErrorMessage('');
+        navigate('/dashboard');
+      } else {
+        setErrorMessage('Invalid email or password. Please try again.');
+        console.log('Invalid email or password...');
+      }
   }
 
   return (
@@ -47,6 +75,8 @@ const Login = () => {
                     size='30'
                     maxLength='100'
                     name='email'
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="Enter your email"
                   />
             </div>
@@ -56,16 +86,22 @@ const Login = () => {
             <div className="input">
               <label className="password-label title5" htmlFor='password'>Password</label>
               <a className="tab3 hyperlink-style">Forgot Password?</a>
-              <input className="textfield"
+                  <input className="textfield"
                     id='password'
                     size='30'
+                    maxLength='100'
                     name='password'
                     type='password'
+                    value={formData.password}
+                    onChange={handleChange}
                     placeholder="Enter your password"    
-                />
+                  />
               <p className="info">Minimum 8 characters</p>
             </div>
           </div>
+
+          {/* Error Message */}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
 
             <div className="button-row">
               <button className="button login-button" type='submit'
