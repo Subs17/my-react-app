@@ -435,6 +435,89 @@
 }
 
 /*Registration Page Styles*/
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.form-content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  justify-items: center;
+}
+
+.form-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  max-width: max-content;
+  justify-self: left;
+}
+
+.form-content p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  max-width: max-content;
+  justify-self: left;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px; /* Space between the form fields */
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  max-width: max-content;
+}
+
+.form-group input {
+  width: 300px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group select {
+  width: 120px;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Date of Birth Fields */
+.date-of-birth-group {
+  display: flex;
+  gap: 10px;
+}
+
+.date-of-birth-group input {
+  width: auto;
+  flex: 1; /* Allow fields to resize dynamically */
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 .primary-button {
   padding: 10px 20px;
   background: #000;
@@ -444,75 +527,56 @@
   cursor: pointer;
 }
 
-.form {
-  display:flex;
-  width: auto;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 10px;
-  align-self: stretch;
-  gap: 100px;
-  flex-shrink: 0;
-  height: 411px;
-  position: relative;
-  overflow: auto;
-}
-
-.form-section {
-  display: flex;
-  justify-content: center;
-  padding: 40px 20px;
-}
-
-.form-content {
-  background: #fff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
-}
-
-.form-content h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.form-content p {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 8px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.form-buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
 .secondary-button {
   padding: 10px 20px;
   background: #fff;
   color: #000;
-  border: 1px solid #000000;
+  border: 1px solid #000;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.form-group .phonenumber-field {
+  width: 130px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input{
+  width: 100%;
+  padding-right: 40px; /* Add padding to prevent text overlap with the icon */
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Password Toggle Button */
+.password-toggle {
+  position: relative;
+  right: 25px; /* Position the icon inside the input field */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Match the height of the input */
+}
+
+.password-toggle img {
+  width: 20px; /* Adjust size of the icon */
+  height: 20px;
+  pointer-events: none; /* Prevent interaction with the image */
 }
