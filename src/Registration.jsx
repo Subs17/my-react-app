@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
@@ -42,18 +42,35 @@ const Registrationpage = () =>{
         setFormData({...formData, [name]: value});
     };
 
-    const handleRegistration = (e) =>{
+    const handleRegistration = async (e) =>{
       e.preventDefault(); //Prevent form submission
 
-        //Basic user validation
-        if(!formData.firstName || !formData.lastName 
-          || !formData.email || !formData.password
-          || !formData.month || !formData.day || !formData.year
-          || !formData.gender || !formData.phone){
-            setErrorMessage('Please fill out all required fields.');
-            console.log('Missing required fields...');
-            return;
-        }
+      // Define the required fields of the form
+      const requiredFields = {
+        firstName: 'First Name',
+        lastName: 'Last Name',
+        email: 'Email',
+        month: 'Month',
+        day: 'Day',
+        year: 'Year',
+        gender: 'gender',
+        phone: 'Phone Number',
+        password: 'Password',
+      };
+
+      // Find missing fields
+      const missingFields = Object.keys(requiredFields).filter(
+        (field) => !formData[field]
+      );
+
+      if (missingFields.length > 0) {
+        const missingFieldNames = missingFields.map((field) => requiredFields[field]).join(', ');
+
+        // Display error code in console and UI
+        console.error('Missing fields:', missingFieldNames);
+        setErrorMessage(`Missing fields: ${missingFieldNames}`);
+        return;
+      }
 
         if(formData.password !== formData.confirmPassword){
             setErrorMessage('Passwords do not match!');
@@ -61,9 +78,50 @@ const Registrationpage = () =>{
             return;
         }
 
-        console.log('Registering user:', formData);
-        navigate('/dashboard')
-        //Call Backend API registration logic here
+        try{
+          // Build the date string
+          const dob = `${formData.year}-${formData.month.padStart(2, '0')}-${formData.day.padStart(2, '0')}`;
+
+          // Prepare the data to be sent to the server
+          const requestData = {
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            altemail: formData.altemail || '', // Optional
+            dob,
+            gender: formData.gender,
+            phone: formData.phone,
+            altPhone: formData.altPhone || '', // Optional
+            password: formData.password,
+        };
+
+        // Send the data to the server and API call
+        console.log('Registering user:', requestData);
+
+        const response = await fetch('http://localhost:3000/api/v1/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(requestData),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          console.log('Registration successful:', data);
+          setErrorMessage('');
+          //console.log('Registering user:', formData);
+          navigate('/dashboard')
+        } else {
+          console.error('Registration failed:', data.error);
+          setErrorMessage(data.message || 'Registration failed. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error during registration:', error);
+        setErrorMessage('An unexpected error occurred. Please try again.');
+      }
+       
     };
 
     const handleBackToLogin = () =>{
