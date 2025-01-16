@@ -19,29 +19,44 @@ const Login = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleLoginClick = () => {
-    //Validate Fields
+  const handleLoginClick = async (e) => {
+    e.preventDefault();
+
+    // Basic login validation
     if(!formData.email || !formData.password){
       setErrorMessage('Please fill out all required fields.');
       console.log('Missing required fields...');
       return;
     }
 
-    const validCredentials = {
-      email: 'testexample@.com',
-      password: 'password123'
-    };
+    try {
+      const response = await fetch('http://localhost:3000/api/v1/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
 
-    if(formData.email === validCredentials.email 
-      && formData.password === validCredentials.password){
-        console.log('Login successful! Redirecting to dashboard...');
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log('Login successful:', data);
         setErrorMessage('');
         navigate('/dashboard');
       } else {
-        setErrorMessage('Invalid email or password. Please try again.');
-        console.log('Invalid email or password...');
+        console.error('Login failed:', data.error);
+        setErrorMessage(data.error || 'Failed to login. Please try again.');
+      } 
+    } catch (error) {
+        console.error('Error during login:', error);
+        setErrorMessage('An unexpected error occurred. Please try again.');
       }
-  }
+  };
+  
 
   return (
     <div className="page">
