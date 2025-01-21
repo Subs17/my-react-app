@@ -1,9 +1,6 @@
-import Navbar from "./components/Navbar";
 import { useState } from 'react';
 import CalendarComponent from './components/Calendar';
 import UpcomingEvent from './components/Event';
-import Footer from "./components/Footer";
-//import './styles/Page.css';
 
 const Dashboardpage = ({ className, ...props }) =>{
     const [events, setEvents] = useState([]);
@@ -27,21 +24,26 @@ const Dashboardpage = ({ className, ...props }) =>{
                     (isUpcoming && eventDate < new Date(nearest.date));
                 return isCloser ? event : nearest;
             }, null);
+
+            setNearestEvent(upcoming);
         }
     }
     return (
-        <div>
-          <Navbar />
+        <div className='dashboard'>
           <h1>Welcome to Your Dashboard</h1>
-          <div>
-            <div>
+          <div className='dashboard content'>
+            <div className='calendar-section'>
+              <h2>Your Calendar</h2>
               <CalendarComponent onDateSelect={handleDateSelect} />
             </div>
-            <div>
-              <UpcomingEvent nearestEvent={nearestEvent} />
+            <div className='event-section'>
+              {nearestEvent ? (
+                <UpcomingEvent nearestEvent={nearestEvent} />
+              ) : (
+                <p>No upcoming events</p>
+              )}  
             </div>
           </div>
-          <Footer />
         </div>
       );
     };
