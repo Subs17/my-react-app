@@ -12,7 +12,6 @@
   justify-content: flex-start;
   position: relative;
   height: auto;
-  min-height: 100vh;
 }
 
 .page .login-page {
@@ -561,6 +560,44 @@
   box-sizing: border-box;
 }
 
+/* Dashboard Page Styles */
+
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.dashboard .content {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.calendar-section .event-section {
+  flex: 1;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-section .event-section h2 {
+  font-size: 24px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.event-section p {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+
 /* Password Toggle Button */
 .password-toggle {
   position: relative;
@@ -580,3 +617,4 @@
   height: 20px;
   pointer-events: none; /* Prevent interaction with the image */
 }
+
