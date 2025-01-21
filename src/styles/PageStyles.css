@@ -576,6 +576,8 @@
   display: flex;
   gap: 20px;
   justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
 .calendar-section .event-section {
