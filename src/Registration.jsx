@@ -1,10 +1,9 @@
 import {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import PropTypes from 'prop-types';
 //import "./styles/Page.css";
 
-const Registrationpage = () =>{
+const Registrationpage = ({ setIsLoggedIn }) =>{
   {/* Form Data */}
     const [formData, setFormData] = useState({
         firstName: '',
@@ -111,6 +110,7 @@ const Registrationpage = () =>{
         if (response.ok) {
           console.log('Registration successful:', data);
           setErrorMessage('');
+          setIsLoggedIn(true); // Set login state
           //console.log('Registering user:', formData);
           navigate('/dashboard')
         } else {
@@ -132,7 +132,6 @@ const Registrationpage = () =>{
 
     return (
         <div className="page">
-        <Navbar />
 
        {/* Form Section */}
        <div className="form-section">
@@ -328,10 +327,12 @@ const Registrationpage = () =>{
           </form>
         </div>
       </div>
-
-      <Footer />
     </div>
     );
+};
+
+Registrationpage.propTypes = {
+    setIsLoggedIn: PropTypes.func.isRequired,
 };
 
 export default Registrationpage;
