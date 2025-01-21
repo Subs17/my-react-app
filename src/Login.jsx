@@ -1,14 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-//import './styles/PageStyles.css'; // Ensure this CSS file includes the provided styles
+import PropTypes from 'prop-types';
 
-const Login = () => {
+const Login = ({ setIsLoggedIn }) => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errorMessage, setErrorMessage] = useState('');
-
   const navigate = useNavigate();
+
   const handleSignupClick = () => {
     console.log('Redirecting to registration page...');
     navigate('/register');
@@ -46,6 +44,7 @@ const Login = () => {
       if (response.ok) {
         console.log('Login successful:', data);
         setErrorMessage('');
+        setIsLoggedIn(true); // Set login state
         navigate('/dashboard');
       } else {
         console.error('Login failed:', data.error);
@@ -61,7 +60,6 @@ const Login = () => {
   return (
     <div className="page">
       <div className="login-page">
-        <Navbar />
         <div className="login-header">
          <div className="header-container"> 
            <h1 className="header-title">Welcome to the Elderly Care Portal!</h1>
@@ -128,10 +126,13 @@ const Login = () => {
          </div>
             <img className="vector-2002" src="vector-2001.svg" alt="Background" />
         </div>
-        <Footer />
       </div>
     </div>
   );
+};
+
+Login.propTypes = {
+  setIsLoggedIn: PropTypes.func.isRequired, // Validate that setIsLoggedIn is a required function
 };
 
 export default Login;
