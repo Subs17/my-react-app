@@ -562,13 +562,49 @@
 
 /* Dashboard Page Styles */
 
-.dashboard {
-  padding: 20px;
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #160078;
+  padding: 40px;
+  color: rgb(60, 60, 60);
+  border-radius: 10px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.hero-title2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+.hero-profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
 }
 
 .dashboard h1 {
   text-align: center;
-  color: #333;
   margin-bottom: 30px;
 }
 
