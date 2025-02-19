@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Component Imports 
 import ProtectedRoute from './components/ProtectedRoute';
@@ -16,13 +16,39 @@ import Login from './Login';
 const App = () => {
   // track User login state 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loadingAuth, setLoadingAuth] = useState(true);
 
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/v1/user", {
+          method: "GET",
+          credentials: "include",
+        });
+        if (response.ok) {
+          // user is logged in
+          setIsLoggedIn(true);
+        } else {
+          // not logged in
+          setIsLoggedIn(false);
+        }
+      } catch (error) {
+        setIsLoggedIn(false);
+      } finally {
+        setLoadingAuth(false);
+      }
+    };
+    checkAuth();
+  }, []);
+
+  if (loadingAuth) {
+    return <div>Loading...</div>;
+  }
   // Define tabs for logged in and logged out states 
   const tabsLoggedIn = [
     { name: 'Home', link: '/dashboard' },
     { name: 'Archives', link: '/archives' },
-    { name: 'Calendars', link: '/calendars' },
-    { name: 'FAQ', link: '/help' },
+    { name: 'Utilities', link: '/help' },
     { name: 'Log Out', link: '/login', action: () => setIsLoggedIn(false) }, //Logout logic
   ];
 
