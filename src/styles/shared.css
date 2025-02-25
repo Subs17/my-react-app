@@ -1,3 +1,20 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Fill full browser height */
+}
+
+.main-content {
+  flex: 1; /* This pushes the footer down */
+  /* add any padding or background you want */
+}
+
 
 /* Shared Button Styles */
 .button {
