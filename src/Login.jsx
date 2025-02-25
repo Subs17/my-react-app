@@ -37,12 +37,13 @@ const Login = ({ setIsLoggedIn }) => {
           email: formData.email,
           password: formData.password,
         }),
+        credentials: 'include',
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        console.log('Login successful:', data);
+        console.log('Login successful!');
         setErrorMessage('');
         setIsLoggedIn(true); // Set login state
         navigate('/dashboard');
@@ -98,7 +99,7 @@ const Login = ({ setIsLoggedIn }) => {
           <div className="row">
             <div className="input">
               <label className="password-label title5" htmlFor='password'>Password</label>
-              <a className="tab3 hyperlink-style">Forgot Password?</a>
+              <a className="tab3 hyperlink-style" href='http://localhost:5173/forgot-password'>Forgot Password?</a>
                   <input className="textfield"
                     id='password'
                     size='30'
