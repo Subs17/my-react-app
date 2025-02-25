@@ -690,7 +690,10 @@
   background: white;
   padding: 20px;
   border-radius: 10px;
-  width: 400px;
+  width: 80vw;     /* 80% of viewport width */
+  max-width: 1000px; /* or whatever max you like */
+  height: 80vh;    /* 80% of viewport height */
+  overflow: hidden;
   text-align: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -846,4 +849,191 @@
   background-color: #FFC107 !important; 
   border-color: #FFC107 !important;
   color: #fff !important;
+}
+
+
+/*event form */ 
+.event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* space between rows */
+}
+
+.event-form-row {
+  display: flex;
+  gap: 10px;      /* space between columns */
+  flex-wrap: wrap; /* let fields wrap on small screens */
+}
+
+.event-form-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;        /* each field expands equally */
+  min-width: 120px;
+}
+
+.event-form-field label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.event-form-field input,
+.event-form-field textarea {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Container for the entire search bar + buttons */
+.search-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  gap: 10px;               
+  margin-bottom: 10px;
+  text-align: center;     
+}
+
+/* The input box styling */
+.search-input {
+  width: 300px;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* A generic button class */
+.btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* A primary variant for your main actions */
+.btn-arch {
+  background-color: #000000;
+  color: #fff;
+}
+
+/* Hover effect for primary button */
+.btn-arch:hover {
+  background-color: #797979;
+}
+
+.btn-delete {
+  background-color: #ff0019;
+  color: #ffffff;
+}
+
+.btn-delete:hover {
+  background-color: #ff3b3b;
+}
+
+/* Utilities Styles */
+.utilities-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.utility-card {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  padding: 15px;
+  cursor: pointer; /* So the user knows it’s clickable */
+  transition: box-shadow 0.3s ease;
+}
+
+.utility-card:hover {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.utility-logo {
+  max-width: 100px;
+  max-height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.utility-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.utility-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* 1) Page wrapper to center content vertically */
+.forgot-password-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* or 100vh if you want it to fill the screen */
+  background-color: #f7f7f7; /* optional light background */
+  margin: 0;
+  padding: 0;
+}
+
+/* 2) The container that holds the form */
+.forgot-password-container {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 400px;        /* fixed width, adjust as needed */
+  max-width: 90vw;     /* so it’s responsive on small screens */
+  padding: 30px;       /* space inside */
+  text-align: center;  /* center the text */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* subtle shadow */
+}
+
+/* 3) Form styling */
+.forgot-password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 4) Input styling */
+.forgot-password-form input[type="email"] {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 5) Button styling */
+.forgot-password-form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.forgot-password-form button:hover {
+  background-color: #0056b3;
+}
+
+/* 6) Some spacing for heading */
+.forgot-password-container h2 {
+  margin-bottom: 20px;
 }
