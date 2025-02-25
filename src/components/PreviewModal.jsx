@@ -40,7 +40,7 @@ function PreviewModal({ item, onClose }) {
         <div style={{ marginTop: "20px" }}>
           <button className='btn btn-arch' onClick={onClose}>Close</button>
           {!isImage && !isPdf && (
-            <button style={{ marginLeft: "10px" }}>
+            <button className='btn btn-arch' style={{ marginLeft: "10px" }}>
               <a
                 href={fileUrl}
                 download={item.name}
