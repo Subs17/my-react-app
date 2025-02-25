@@ -12,7 +12,7 @@ function PreviewModal({ item, onClose }) {
 
   return (
     <div className="modal">
-      <div className="modal-content">
+      <div className="modal-content modal-file-preview">
         <h2>Preview: {item.name}</h2>
 
         {isImage ? (
