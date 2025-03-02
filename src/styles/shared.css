@@ -48,6 +48,17 @@ html, body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.navbar-logo-title {
+  display: flex;          /* keep them side by side */
+  align-items: center;    /* vertically center them */
+}
+
+.navbar-logo {
+  width: 40px;      /* adjust as needed */
+  height: 40px;     /* or auto if you want aspect ratio preserved */
+  margin-right: 10px;
+}
+
 .navbar h1 {
   font-size: 24px;
   font-weight: bold;
